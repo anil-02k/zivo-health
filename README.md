@@ -74,4 +74,4 @@ Simply open [Zivo Health](https://zivo-health.vercel.app/) and start using the p
 ---
 ### Stay Connected 🚀
 - 🌍 **Live App**: [Zivo Health](https://zivo-health.vercel.app/)
-- 💻 **GitHub Repository**: [<YOUR_GIT_URL>](https://github.com/anil-02k/zivo-health)
+- 💻 **GitHub Repository**: [GIT_URL](https://github.com/anil-02k/zivo-health)
