@@ -7,7 +7,7 @@ Zivo Health is an AI-powered health analysis platform that provides insights int
 
 ---
 ## Technologies Used
-This project leverages modern web development frameworks and AI APIs for seamless user experience and intelligent analysis.
+This project leverages modern web development frameworks and GEMINI AI APIs for seamless user experience and intelligent analysis.
 
 ### **Frontend**
 - **Vite** - Fast build tool for React applications
@@ -65,29 +65,11 @@ The platform utilizes **Gemini API** to analyze lab reports and provide structur
   - **Personalized recommendations**
   - **Risk factors and potential concerns**
 
-### **Edit a File Directly in GitHub**
-1. Navigate to the desired file(s)
-2. Click the **Edit** button (pencil icon)
-3. Make changes and commit them
-
-### **Use GitHub Codespaces**
-- Navigate to the main page of your repository
-- Click on the **Code** button
-- Select the **Codespaces** tab
-- Click **New codespace** to launch an online development environment
-- Edit files and commit changes
-
 ---
 ## Deployment
 Zivo Health is deployed on **Vercel** for a fast and scalable web experience.
 
 Simply open [Zivo Health](https://zivo-health.vercel.app/) and start using the platform!
-
----
-## Contributions & Feedback
-We welcome contributions! Feel free to **fork the repo**, create a **pull request**, or raise an **issue**.
-
-For any queries, reach out to us at **support@zivohealth.com**.
 
 ---
 ### Stay Connected 🚀
