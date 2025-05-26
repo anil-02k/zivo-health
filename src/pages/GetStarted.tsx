@@ -47,81 +47,12 @@ const GetStarted = () => {
         return;
       }
 
-      // Add image quality checks for image files
-      if (selectedFile.type.startsWith('image/')) {
-        const img = new Image();
-        img.onload = () => {
-          // Check image dimensions
-          if (img.width < 800 || img.height < 600) {
-            toast({
-              title: "Low resolution image",
-              description: "For better results, please upload a higher resolution image (minimum 800x600 pixels).",
-              variant: "destructive"
-            });
-            return;
-          }
-
-          // Create a temporary canvas to check image quality
-          const tempCanvas = document.createElement('canvas');
-          const tempCtx = tempCanvas.getContext('2d');
-          if (!tempCtx) return;
-
-          tempCanvas.width = img.width;
-          tempCanvas.height = img.height;
-          tempCtx.drawImage(img, 0, 0);
-
-          // Check image quality by analyzing pixel data
-          const imageData = tempCtx.getImageData(0, 0, img.width, img.height);
-          const data = imageData.data;
-          
-          // Calculate average brightness and contrast
-          let totalBrightness = 0;
-          let maxBrightness = 0;
-          let minBrightness = 255;
-          
-          for (let i = 0; i < data.length; i += 4) {
-            const brightness = (data[i] + data[i + 1] + data[i + 2]) / 3;
-            totalBrightness += brightness;
-            maxBrightness = Math.max(maxBrightness, brightness);
-            minBrightness = Math.min(minBrightness, brightness);
-          }
-          
-          const avgBrightness = totalBrightness / (data.length / 4);
-          const contrast = (maxBrightness - minBrightness) / 255;
-
-          // Check for potential quality issues
-          if (avgBrightness < 50 || avgBrightness > 200) {
-            toast({
-              title: "Image may be too dark or bright",
-              description: "For better results, try taking the photo in better lighting conditions.",
-              variant: "destructive"
-            });
-            return;
-          }
-
-          if (contrast < 0.3) {
-            toast({
-              title: "Low contrast image",
-              description: "The image appears to have low contrast. For better results, ensure good lighting and clear text.",
-              variant: "destructive"
-            });
-            return;
-          }
-
-          setFile(selectedFile);
-          toast({
-            title: "File selected",
-            description: `"${selectedFile.name}" has been selected for upload.`,
-          });
-        };
-        img.src = URL.createObjectURL(selectedFile);
-      } else {
-        setFile(selectedFile);
-        toast({
-          title: "File selected",
-          description: `"${selectedFile.name}" has been selected for upload.`,
-        });
-      }
+      // Remove all image quality checks. Always accept the image.
+      setFile(selectedFile);
+      toast({
+        title: "File selected",
+        description: `"${selectedFile.name}" has been selected for upload.`,
+      });
     }
   };
 
